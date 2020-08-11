@@ -13,4 +13,5 @@ for file in os.listdir(os.chdir('./delicious')):
       file_list = file.split(usd.group())
       esd = usd_list[1] + '-' + usd_list[0] + '-' + usd_list[2]
       new_name = file_list[0] + esd + file_list[1]
+      print('Renaming "%s" to "%s"...' % (file, new_name))
       shutil.move(file, new_name)
