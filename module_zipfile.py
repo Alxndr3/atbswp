@@ -18,7 +18,7 @@ os.chdir('delicious')
 
 # Creating zip files
 with zipfile.ZipFile('new.zip', 'w') as new_zip:
-    new_zip.write('spam.txt', compress_type=zipfile.ZIP_DEFLATED)
+    new_zip.write('cats', compress_type=zipfile.ZIP_DEFLATED)
 # Appending files to zip file
 with zipfile.ZipFile('new.zip', 'a') as new_zip:
     new_zip.write('.credentials', compress_type=zipfile.ZIP_DEFLATED)
