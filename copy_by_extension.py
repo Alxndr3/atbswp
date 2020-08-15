@@ -1,6 +1,8 @@
+#!/bin/env python3
 import os
 import re
 import shutil
+import sys
 
 
 def copy_by_extension(from_folder, to_folder, extension, tree):
@@ -37,9 +39,10 @@ def copy_by_extension(from_folder, to_folder, extension, tree):
                 break
 
 
-copy_by_extension('/home/alexandre/PycharmProjects/atbswp/delicious',
-                  '/home/alexandre/PycharmProjects/atbswp/bacon',
-                  '.txt',
-                  'y')
-#copy_by_extension('/home/alexandre/Downloads', 'delicious','.pdf', 'n')
+if len(sys.argv) < 4:
+    print(help(copy_by_extension))
+    sys.exit()
+else:
+   arguments = sys.argv
+   copy_by_extension(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 
