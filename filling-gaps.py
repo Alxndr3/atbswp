@@ -42,9 +42,10 @@ else:
             # New name to the file
             new_str = new_name[0] + str(new_name[1]).zfill(len_num) + extension[0][2]
             # Rename the current file to the name of the gaping file
-#            print(f'Renaming {file} to {new_str}')
-#            shutil.move(file, new_str)
+            print(f'Renaming {file} to {new_str}')
+            shutil.move(file, new_str)
             # If you want to create a new file in the gaping one rather renaming the leading one comment the
             # two previous lines and uncomment the two next ones
-            shutil.move(directory, new_str)
+           # with open(new_str, 'w') as nf:
+           #     nf.write('')
         previous_file += 1
