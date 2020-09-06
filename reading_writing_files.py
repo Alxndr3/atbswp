@@ -11,14 +11,22 @@ print(sonnet_file.readlines())
 '''
 # create a new file with the w as second argument, close it, reopen it in a 'append' mode write again on it,
 # close it, save its content as a variable and print it in the terminal
-bacon_file = open('bacon.txt', 'w')
-bacon_file.write('Hello Bacon!\n')
-bacon_file.close()
-bacon_file = open('bacon.txt', 'a')
-bacon_file.write('Bacon is not a vegetable.')
-bacon_file = open('bacon.txt')
-content = bacon_file.read()
-bacon_file.close()
-print(content)
+#bacon_file = open('bacon.txt', 'w')
+#bacon_file.write('Hello Bacon!\n')
+#bacon_file.close()
+#bacon_file = open('bacon.txt', 'a')
+#bacon_file.write('Bacon is not a vegetable.')
+#bacon_file = open('bacon.txt')
+#content = bacon_file.read()
+#bacon_file.close()
+#print(content)
+import os
 
 
+os.chdir('/home/alexandre')
+
+with open('my_program_log.txt') as my_log:
+    log_file = my_log.readlines()
+
+for i in log_file:
+    print(i)
