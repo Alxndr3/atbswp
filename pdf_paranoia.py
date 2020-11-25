@@ -15,7 +15,8 @@ else:
                 with open(folder_name + '/' + filename, 'rb') as pdf_file:
                     pdf_reader = PyPDF2.PdfFileReader(pdf_file)
                     if pdf_reader.isEncrypted:
-                        pass
+                        print(f'The file {filename} is already encrypted.')
+                        continue
                     else:
                         pdf_writer = PyPDF2.PdfFileWriter()
                         for page_num in range(pdf_reader.numPages):
@@ -33,5 +34,7 @@ else:
                     except:
                         print('It has failed!')
                     else:
-                        #os.remove(folder_name + '/' + filename)
-                        print(f"Deleting...{folder_name + filename}")
+                        print(f"Deleting...{filename} in ", end=' ')
+                        print(folder_name)
+                        os.remove(folder_name + '/' + filename)
+
