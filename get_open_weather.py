@@ -39,25 +39,18 @@ weather_data = json.loads(response.text)
 # m = weather_data['main']
 #pprint.pprint(c)
 
-w = weather_data['list'] # pprint.pprint(w[0])
-print('Current weather in %s:' % (location))
-print(w[0]['weather'][0]['main'], '-', w[0]['weather'][0]['description'], end='\n\n')
-print('Temperature:')
-print(round(int(w[0]['main']['temp']) - 273.15, 2), end='\n\n')
-print('Feels like:')
-print(round(int(w[0]['main']['feels_like']) - 273.15, 2), end='\n\n')
+w = weather_data['list']
+# pprint.pprint(w[0])
+for x in range(3):
+    if x == 0:
+        print('Current weather in %s:' % (location))
+    if x == 1:
+        print('Tomorrow')
+    if x == 2:
+        print('Day after tomorrow')
+    print(w[x]['weather'][0]['main'], '-', w[x]['weather'][0]['description'], end='\n\n')
+    print('Temperature:')
+    print(round(int(w[x]['main']['temp']) - 273.15, 2), end='\n\n')
+    print('Feels like:')
+    print(round(int(w[x]['main']['feels_like']) - 273.15, 2), end='\n\n')
 
-print('Tomorrow')
-print(w[1]['weather'][0]['main'], '-', w[1]['weather'][0]['description'], end='\n\n')
-print('Temperature:')
-print(round(int(w[1]['main']['temp']) - 273.15, 2), end='\n\n')
-print('Feels like:')
-print(round(int(w[1]['main']['feels_like']) - 273.15, 2), end='\n\n')
-
-
-print('Day after tomorrow')
-print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'], end='\n\n')
-print('Temperature:')
-print(round(int(w[2]['main']['temp']) - 273.15, 2), end='\n\n')
-print('Feels like:')
-print(round(int(w[2]['main']['feels_like']) - 273.15, 2), end='\n\n')
