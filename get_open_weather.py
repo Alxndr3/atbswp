@@ -3,12 +3,14 @@
 
 
 import json
+from os import environ
 import pprint
 import requests
 import sys
 
 
-APPID = '37dd67503f315d5f5a3d2ed1d52cd220'
+#APPID = '37dd67503f315d5f5a3d2ed1d52cd220'
+APPID = environ.get("OPEN_WEATHER_ID")
 
 # Compute location from comand line arguments.
 if len(sys.argv) < 2:
