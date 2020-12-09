@@ -44,9 +44,9 @@ w = weather_data['list']
 for x in range(3):
     if x == 0:
         print('Current weather in %s:' % (location))
-    if x == 1:
+    elif x == 1:
         print('Tomorrow')
-    if x == 2:
+    else:
         print('Day after tomorrow')
     print(w[x]['weather'][0]['main'], '-', w[x]['weather'][0]['description'], end='\n\n')
     print('Temperature:')
