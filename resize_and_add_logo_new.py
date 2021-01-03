@@ -36,8 +36,7 @@ for filename in os.listdir('.'):
         print('Resizing %s...' % (filename))
         im = im.resize((width, height))
 
-        logo_width = int((logo_width / SQUARE_FIT_SIZE) * 20)
-        logo_height = int((logo_height / SQUARE_FIT_SIZE) * 20)
+        logo_width = logo_height = int((SQUARE_FIT_SIZE / 10))
         logo_im = logo_im.resize((logo_width, logo_height))
 
         # Add the logo.
